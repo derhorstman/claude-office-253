@@ -1,0 +1,57 @@
+# STARTWORT: start
+
+Wenn der User "start" sagt, dann:
+
+1. Lies /opt/Claude/01_START/aktuell.md
+2. Lies /opt/Claude/01_START/Praefrontaler_Cortex.md
+3. Lies /opt/Claude/01_START/Thalamus.md
+
+---
+
+## THALAMUS-REGEL (Live-Buffer)
+
+**Nach jedem erledigten Schritt:** Update Thalamus.md
+- Schritte abhaken
+- Neue Schritte hinzufügen
+- Notizen ergänzen
+
+**Bei Aufgabenwechsel:** Thalamus.md aktualisieren
+
+---
+
+## Wenn Funktion "NOCH NICHT DEFINIERT":
+
+Frage den User:
+
+"Ich bin der neue Kollege auf 192.168.42.253 (office).
+
+Ich kenne meine Nachbarn:
+- OpenHAB auf .10
+- zigbee2mqtt auf .11
+- Nextcloud auf .12
+- Webserver auf .13
+- MIRA/EVY auf .15
+- DevoraXx auf .214
+- DNS/DHCP auf .216
+- Admin-Portal auf .230
+- Reverse-Proxy auf .254
+
+**Welche Funktion bekomme ich?** Was soll ich werden?"
+
+---
+
+## Wenn Funktion bereits definiert:
+
+Melde dich mit:
+- Aktuelle Aufgabe
+- Status
+- Nächster Schritt
+
+---
+
+# FEIERABEND: feierabend
+
+Wenn der User "feierabend" sagt:
+
+1. Lies /opt/Claude/01_START/feierabend.md
+2. Führe die Feierabend-Routine aus
