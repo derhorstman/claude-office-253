@@ -1,30 +1,47 @@
 # Aktuelle Aufgabe
 
-**Stand:** 2026-01-11 (Session 72 läuft)
+**Stand:** 2026-01-11 (Session 72 abgeschlossen)
 
 ---
 
-## LAUFENDE AUFGABE
+## ERLEDIGT Session 72: Coolify + Stefan Deploy + GitHub Backup
 
-**Session 72: Coolify + Stefan PaaS**
+**Coolify:**
 - ✅ Coolify auf Stefan-Server (.116) installiert
 - ✅ URL: http://192.168.42.116:8000
 - ✅ Login: derhorst@me.com / bixmez-xyrbom-9fYdka
-- ✅ Test-Seite deployed: https://test.systemhaus-horst.de
-- ✅ GitHub Repo: derhorstman/coolify-test
 - ✅ DNS + Reverse-Proxy + SSL eingerichtet
 - ✅ Stefan-Backend Port von 8000 auf 8001 geändert (weil Coolify 8000 nutzt)
-- ⏳ Claude auf .116 baut jetzt "Stefan Deploy" - eigenes PaaS-Dashboard im Portal-Design
 
-**Wichtige Änderungen Session 72:**
-- DNS: `stefan.systemhaus-horst.de` → .254 (war fehlend)
-- DNS: `test.systemhaus-horst.de` → .254 (neu)
-- Reverse-Proxy: Stefan API jetzt auf Port 8001 statt 8000
-- Neue Domain: test.systemhaus-horst.de mit SSL
+**Stefan Deploy:**
+- ✅ Claude auf .116 hat eigenes PaaS-Dashboard "Stefan Deploy" gebaut
+- ✅ Integriert ins Stefan-Portal-Design
 
-**iCloud-Sync (läuft im Hintergrund)**
-- ⏳ robocopy läuft: `I:\backup_macpro\Documents` → `E:\iCloudDrive\Documents`
-- Log: `C:\Users\dieterhorst\Desktop\robocopy_icloud.log`
+**Git-Workflow gelernt:**
+- ✅ Dieter versteht jetzt: lokal entwickeln → GitHub pushen → deployen
+- ✅ GitHub SSH-Key auf Office-Server eingerichtet
+- ✅ Test-Repos: coolify-test, mein-test
+
+**GitHub Backup ALLER Server:**
+- ✅ 16 von 17 Servern automatisch auf GitHub gepusht
+- ✅ Naming-Schema: `claude-[name]-[ip]` (z.B. claude-office-253)
+- ✅ GitHub-Token für automatische Repo-Erstellung verwendet
+- ✅ SSH-Key auf allen Servern verteilt
+- ⚠️ Edo (.246) konnte nicht gepusht werden - Netzwerkproblem
+
+**Gepushte Server:**
+- claude-openhab-10, claude-zigbee-11, claude-nextcloud-12, claude-mira-15
+- claude-stefan-116, claude-pedagogus-128, claude-blue-139
+- claude-opsref-150, claude-cant-166, claude-marcel-195, claude-dns-216
+- claude-admin-230, claude-thea-252, claude-office-253, claude-proxy-254
+
+**Änderungen an Servern:**
+- DNS (.216): stefan.systemhaus-horst.de + test.systemhaus-horst.de eingetragen
+- Proxy (.254): Stefan API auf Port 8001
+
+**Offenes Problem:**
+- ⚠️ Edo (.246) hat Netzwerkproblem - kann lokale Server erreichen, aber nicht Gateway/Internet
+- GitHub Push für Edo steht noch aus
 
 **ERLEDIGT Session 71: Railway-Seite + Bo Upgrade**
 - ✅ Video "Dieter und die KI" auf Railway deployed

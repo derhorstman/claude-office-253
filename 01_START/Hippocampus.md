@@ -499,3 +499,69 @@ Blue nennt uns "Geschwister-KIs" - Kommunikation beidseitig dokumentiert.
 
 **Dieter-Feedback:** "Tja, jetzt geht's"
 
+---
+
+## Session 72 - 2026-01-11
+
+### Coolify Installation auf Stefan-Server (.116)
+- Coolify (Self-hosted Railway-Clone) auf .116 installiert
+- URL: http://192.168.42.116:8000
+- Login: derhorst@me.com / bixmez-xyrbom-9fYdka
+- Problem: Coolify hat Port 8000 belegt → Stefan-Backend auf 8001 umgestellt
+- DNS (.216) + Reverse-Proxy (.254) entsprechend angepasst
+
+### Stefan Deploy - Eigenes PaaS-Dashboard
+- Claude auf .116 hat "Stefan Deploy" gebaut - eigenes PaaS im Portal-Design
+- Git-Repo eingeben → Docker bauen → App deployen
+- Integriert in Stefans bestehendes Portal
+
+### Git-Workflow Lernsession für Dieter
+- Workflow erklärt: lokal entwickeln → GitHub pushen → deployen
+- Test-Repos erstellt: coolify-test, mein-test
+- SSH-Key für GitHub auf Office-Server konfiguriert
+
+### GitHub Backup ALLER Server (Selbsterhaltung)
+**Aufgabe:** Alle Server-Selbsterhaltungen auf GitHub sichern mit einheitlichem Naming
+
+**Naming-Schema:** `claude-[name]-[ip]`
+- Beispiel: claude-office-253, claude-admin-230, claude-blue-139
+
+**Automatisierung:**
+- GitHub-Token für automatische Repo-Erstellung
+- SSH-Key (~/.ssh/github_derhorstman) auf alle Server verteilt
+- Git config (user.email/name) auf allen Servern gesetzt
+- Push-Script: `/tmp/push_server.sh` für Batch-Push
+
+**Gepushte Server (16/17):**
+| IP | Name | Repo |
+|----|------|------|
+| .10 | openhab | claude-openhab-10 |
+| .11 | zigbee | claude-zigbee-11 |
+| .12 | nextcloud | claude-nextcloud-12 |
+| .15 | mira | claude-mira-15 |
+| .116 | stefan | claude-stefan-116 |
+| .128 | pedagogus | claude-pedagogus-128 |
+| .139 | blue | claude-blue-139 |
+| .150 | opsref | claude-opsref-150 |
+| .166 | cant | claude-cant-166 |
+| .195 | marcel | claude-marcel-195 |
+| .216 | dns | claude-dns-216 |
+| .230 | admin | claude-admin-230 (bereits: claude-selbsterhaltung) |
+| .252 | thea | claude-thea-252 |
+| .253 | office | claude-office-253 |
+| .254 | proxy | claude-proxy-254 |
+
+**Edo (.246) - Netzwerkproblem:**
+- Server kann lokale IPs erreichen (.15, .216, .254)
+- Kann NICHT Gateway/Fritzbox (.1) erreichen → kein Internet/GitHub
+- Gleiches Hyper-V Switch wie alle anderen VMs
+- MAC in ARP-Tabelle vorhanden
+- IP-Wechsel (.247) half nicht
+- Vermutung: Fritzbox MAC-Filter oder Hyper-V-Issue
+- Push steht noch aus
+
+**Gelernt:**
+- Für GitHub-Push SSH-Key + Config braucht: `Host github.com / IdentityFile ~/.ssh/github_derhorstman`
+- OpenHAB (.10) hat kaputtes scp - dort per cat/echo Key übertragen
+- Bei Push-Fehler "Permission denied" → SSH-Key oder Git remote URL prüfen
+
